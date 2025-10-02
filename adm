@@ -51,12 +51,12 @@ getgenv().Config = {
             Items = {},
         },
         AutoRecycle = {
-            Enabled = true, -- Enable auto recycler system
+            Enabled = false, -- Enable auto recycler system
             RarityFilter = { --Rarity filter for recycling pets
                 common = true,
                 uncommon = true,
                 rare = true,
-                ultra_rare = true,
+                ultra_rare = false,
                 legendary = false
             },
             KeepNeons = true, -- Keep neon pets
