@@ -26,6 +26,7 @@ task.spawn(function()
         ["uncommon"] = true,
         ["rare"] = true,
         ["ultra_rare"] = true,
+        ["legendary"] = true,
 
         ["HideUselessGui"] = true,
         ["Blur_username"] = true,
