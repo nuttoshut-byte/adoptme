@@ -1,40 +1,10 @@
-task.spawn(function()
-    script_key="kEntHvnODLqhYlGlwuLvVBxuyuzqwtSW";
-    getgenv().Config = {
-        ["PetAMountToBuy"] = "999", -- can be 999
-        ["WhatCategory"] = "pets", -- gifts if WhatCategory = "" then = pets
-        ["PetRemoteToBuy"] = "aztec_egg_2025_aztec_egg", -- exemple for gifts halloween_2025_spider_box
-
-
-        ["PetFarmAutoSwitchFullGrown"] = false,
-        ["PetFarmActive"] = true, -- farm potion
-
-
-        ["EggFarmActive"] = true, -- farm egg, if no more eggs will farm potion, if found new egg will farm them to
-        ["EggToIgnore"] = {"pet_recycler_2025_crystal_egg"}, -- eggs to ignore when eggfarm active
-        ["LoopBuyEgg"] = true, -- when enough bucks will buy egg, only work with eggfarm
-        ["EggToBuyEgg"] = "aztec_egg_2025_aztec_egg",
-
-
-        ["NeonMegaFarm"] = false,
-        ["BuyEgg"] = "aztec_egg_2025_aztec_egg", -- only work with NeonMegaFarm, will loop buy this egg when enough bucks
-        
-
-        ["AutoReleasePet"] = true, -- work with egg/pet farm, will release selected rarity
-        ["RecycleWebhook"] = "https://discord.com/api/webhooks/1445032288390746153/S7zjlMjlhqr4BWDdzPq04XzBaei_oA_iFuVH2Vh5hPl0eUbUUD7LafrSZxACvrRdtk0g",
-        ["common"] = true,
-        ["uncommon"] = true,
-        ["rare"] = true,
-        ["ultra_rare"] = true,
-        ["legendary"] = true,
-
-        ["HideUselessGui"] = true,
-        ["Blur_username"] = true,
-        ["Blazing_Lion_Log"] = false,
-        ["DiscordId"] = "123456",
-        ["Webhook"] = "",
-        ["LegendaryWebhook"] = "https://discord.com/api/webhooks/1445032557438701608/S9fBXEoDoN_YwJkxDjaiFVn_DiiwCJuT3oo_iBKaem6R3UO8SYfqqGdQ7yZGrF6thqpQ",
-        ["NeonMegaWebhook"] = "",
-    }
-    loadstring(game:HttpGet("https://api.luarmor.net/files/v4/loaders/66567bfd337b57eb059b58dbe1badb89.lua"))()
-end)
+Wait(70)
+getgenv().RollbackConfig = {
+    AutoRollback = true, -- true or false
+    SelectedEgg = "pet_recycler_2025_crystal_egg", -- e.g., "cracked_egg", "aussie_egg" (use the egg id here)
+    WantedPets = {"Dango Penguins", "Giant Panda"}, -- e.g., "dog", "cat", "Kangaroo" (please use the original name not pet id)
+    WebhookURL = "https://discord.com/api/webhooks/1371491842234912839/jk9zLgJ7-WtuJ2qDIKVKDtuNJimYP-1iO-q2qPyN2Fz5dtc0DCZFCF9fYjtWFiRxJPx7", -- your webhook URL here
+    CurrentEggUnique = nil, -- just leave this here please
+};
+script_key="epGXYIpxwZfIbyALwYDqGxhwoXRvRDiC";
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/bbe161c10602064379ebcd1cb13204c9.lua"))()
