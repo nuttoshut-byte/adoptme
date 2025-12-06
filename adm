@@ -1,10 +1,93 @@
-Wait(70)
-getgenv().RollbackConfig = {
-    AutoRollback = true, -- true or false
-    SelectedEgg = "pet_recycler_2025_crystal_egg", -- e.g., "cracked_egg", "aussie_egg" (use the egg id here)
-    WantedPets = {"Dango Penguins", "Giant Panda"}, -- e.g., "dog", "cat", "Kangaroo" (please use the original name not pet id)
-    WebhookURL = "https://discord.com/api/webhooks/1371491842234912839/jk9zLgJ7-WtuJ2qDIKVKDtuNJimYP-1iO-q2qPyN2Fz5dtc0DCZFCF9fYjtWFiRxJPx7", -- your webhook URL here
-    CurrentEggUnique = nil, -- just leave this here please
-};
-script_key="epGXYIpxwZfIbyALwYDqGxhwoXRvRDiC";
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/bbe161c10602064379ebcd1cb13204c9.lua"))()
+getgenv().Config = {
+        Dashboard = {
+            Enabled = false, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
+            GroupName = "adoptme", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
+        },
+        BabyFarm = true, -- Enable/disable baby farming
+        PetFarm = {
+            Enabled = true, -- Enable/disable pet farming
+            FarmEggs = false, -- Farm eggs instead of regular pets
+            BuyEggs = false, -- Automatically buy eggs when needed
+            EggType = "aztec_egg_2025_aztec_egg", -- Which egg type to farm (any or specific egg ID)
+            BuyEggType = "aztec_egg_2025_aztec_egg", -- Which egg type to buy
+            MaxPets = 1, -- Maximum pets to equip (1-2)
+            FarmUntilFullGrown = false, -- Prioritize pets that aren't full grown
+            PrioritizeFriendship = true, -- Prioritize pets with higher friendship
+            SelectiveFarm = false, -- Only farm specific pet types
+            SelectedPetTypes = {}, -- Pet types to farm when SelectiveFarm is enabled
+        },
+        AutoNeon = { -- Auto neon 
+            Enabled = true,
+            MakeMega = true, -- to use neon pets to make mega neon
+        },
+        Misc = {
+            AutoShowUI = false, -- (To Load the ui or not)
+        },
+        Performance = {
+            Disable3DRendering = true, -- Disable 3D rendering for better performance
+            ReduceGraphics = true, -- Reduce graphics quality to minimum
+        },
+        AutoPotion = {
+            Enabled = false, -- Use age potions automatically
+            SelectedPets = {"penguins_2025_dango_penguins", "pet_recycler_2025_giant_panda"}, -- Pet types to age with potions
+        },
+        AutoTrade = {
+            Enabled = false,
+            AutoAcceptTrades = false,
+            SendTradesTo = "adoptbro_3",
+            TradeMode = "specific", -- "specific" or "all"
+            Categories = {"pets"},
+            Items = {"pet_recycler_2025_giant_panda", "penguins_2025_dango_penguins"}, -- e.g., {"dog", "cat", "sandwich"}
+            ItemCounts = {100}, -- e.g., {30, 12} - corresponds to Items array
+            FilterByAge = true,
+            SelectedAges = {6}, -- 1=Newborn, 2=Junior, 3=PreTeen, 4=Teen, 5=PostTeen, 6=FullGrown
+            ExcludeNeons = false,
+            ExcludeFullGrown = false
+        },
+        AutoBuy = {
+            Enabled = false, -- Enable auto buying system
+            SelectedItems = {}, -- Items to buy (e.g., {"pet_food", "water_cooler", "pizza_ingredients"})
+        },
+        AutoPay = {
+            Enabled = false, -- on or off 
+            TargetPlayer = "", -- username of player to pay
+        },
+        AutoOpen = { -- auto open gift boxes/baits etc 
+            Enabled = false,
+            Items = {},
+        },
+        AutoRecycle = {
+            Enabled = true, -- Enable auto recycler system
+            RarityFilter = { --Rarity filter for recycling pets
+                common = true,
+                uncommon = true,
+                rare = true,
+                ultra_rare = true,
+                legendary = false
+            },
+            KeepNeons = true,
+            KeepFullGrown = false, -- Keep full grown pets
+            SelectiveMode = false, -- Only recycle specific pet types
+            SelectedPets = {}
+        },
+        IdleProgression = { -- pet pen
+            Enabled = true,
+            SelectedPets = {"aztec_egg_2025_temple_friend", "aztec_egg_2025_winged_snake"},  -- List of pet IDs to use for the pet pen
+            AutoMinigame = true -- Automatically start the pet pen micro minigame = alot of bucks and xp :moneybag:
+        },
+       Webhook = {
+            Enabled = true, -- Send webhook notifications
+            URL = "https://discord.com/api/webhooks/1351289892742631464/dFS2JiDiUbHfiIbI9kaTyIRen66GbLcsHCtinTUnR_YaGQtFt14LKwvCfvTtRTyzzBId", -- Default Discord webhook URL
+            PetUnlock = {
+                Enabled = true, -- Send webhook notifications when unlocking a pet
+                URL = "https://discord.com/api/webhooks/1432973030887391365/NJY6sA-n62LXz3ipY77bj4CI5EVuD1glMnyATPniDCUoTdiXEC2hjhFs1SqQJKJn2hFV", -- Separate webhook for pet unlocks
+                FilterRarities = {"legendary"} -- Only send webhook for these rarities
+            },
+        },
+        TaskExclusion = {
+            Enabled = false, -- Enable task exclusion system
+            ExcludedTasks = {}, -- Tasks to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
+        },
+    };
+script_key="vNShNZMaBZPnAveehWzwJconcZulEdSv"
+loadstring(game:HttpGet("https://zekehub.com/scripts/AdoptMe/MassFarm.lua"))()
