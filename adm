@@ -32,7 +32,7 @@ getgenv().Config = {
             SelectedPets = {"penguins_2025_dango_penguins", "pet_recycler_2025_giant_panda"}, -- Pet types to age with potions
         },
         AutoTrade = {
-            Enabled = true,
+            Enabled = false,
             AutoAcceptTrades = false,
             SendTradesTo = "adoptbro_3",
             TradeMode = "specific", -- "specific" or "all"
