@@ -32,14 +32,14 @@ getgenv().Config = {
             SelectedPets = {"penguins_2025_dango_penguins", "pet_recycler_2025_giant_panda"}, -- Pet types to age with potions
         },
         AutoTrade = {
-            Enabled = false,
+            Enabled = true,
             AutoAcceptTrades = false,
             SendTradesTo = "adoptbro_3",
             TradeMode = "specific", -- "specific" or "all"
             Categories = {"pets"},
             Items = {"pet_recycler_2025_giant_panda", "penguins_2025_dango_penguins"}, -- e.g., {"dog", "cat", "sandwich"}
             ItemCounts = {100}, -- e.g., {30, 12} - corresponds to Items array
-            FilterByAge = true,
+            FilterByAge = false,
             SelectedAges = {6}, -- 1=Newborn, 2=Junior, 3=PreTeen, 4=Teen, 5=PostTeen, 6=FullGrown
             ExcludeNeons = false,
             ExcludeFullGrown = false
