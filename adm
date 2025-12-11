@@ -1,92 +1,98 @@
-getgenv().Config = {
+ getgenv().Config = {
         Dashboard = {
-            Enabled = false, -- true = Connect to Adopt Me dashboard for remote monitoring/control (uses websocket), false = Local farming only (better performance, no external connections)
-            GroupName = "adoptme", -- Group name to organize accounts on the Adopt Me dashboard (only used if Enabled = true)
+            Enabled = false, -- Connect to Adopt Me dashboard for remote monitoring/control
+            GroupName = "adoptme", -- Group name for organizing accounts on dashboard
         },
-        BabyFarm = true, -- Enable/disable baby farming
+        BabyFarm = true, -- Does baby farm
         PetFarm = {
-            Enabled = true, -- Enable/disable pet farming
-            FarmEggs = true, -- Farm eggs instead of regular pets
-            BuyEggs = true, -- Automatically buy eggs when needed
-            EggType = "aztec_egg_2025_aztec_egg", -- Which egg type to farm (any or specific egg ID)
-            BuyEggType = "aztec_egg_2025_aztec_egg", -- Which egg type to buy
-            MaxPets = 1, -- Maximum pets to equip (1-2)
-            FarmUntilFullGrown = false, -- Prioritize pets that aren't full grown
-            PrioritizeFriendship = false, -- Prioritize pets with higher friendship
-            SelectiveFarm = false, -- Only farm specific pet types
-            SelectedPetTypes = {}, -- Pet types to farm when SelectiveFarm is enabled
+            Enabled = true, -- Enables the Pet Farm
+            FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
+            BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
+            EggType = "any", -- Which egg to equip ("any" = first available, or specific egg ID)
+            BuyEggType = "any", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
+            MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
+            FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
+            PrioritizeFriendship = true, -- If true, selects pets with higher friendship level first
+            SelectiveFarm = false, -- If true, only farm pets in SelectedPetTypes list
+            SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
-        AutoNeon = { -- Auto neon 
-            Enabled = true,
-            MakeMega = true, -- to use neon pets to make mega neon
+        EventFarm = {
+            AutoExchange = {
+                Enabled = false, -- Exchange bucks for event currency
+            },
+        },
+        AutoNeon = {
+            Enabled = false, -- Make neon pets when 4 full grown pets of same type available
+            MakeMega = false, -- If true, use 4 full grown neons to make mega neon
         },
         Misc = {
-            AutoShowUI = false, -- (To Load the ui or not)
+            AutoShowUI = false, -- Load the UI on script start (false = less memory usage)
         },
         Performance = {
             Disable3DRendering = true, -- Disable 3D rendering for better performance
             ReduceGraphics = true, -- Reduce graphics quality to minimum
         },
         AutoPotion = {
-            Enabled = false, -- Use age potions automatically
-            SelectedPets = {"penguins_2025_dango_penguins", "pet_recycler_2025_giant_panda"}, -- Pet types to age with potions
+            Enabled = false, -- Use age potions on pets to level them up
+            SelectedPets = {}, -- Pet IDs to use potions on (empty = does fucking nothing mate)
         },
         AutoTrade = {
-            Enabled = true,
-            AutoAcceptTrades = false,
-            SendTradesTo = "adoptbro_3",
-            TradeMode = "specific", -- "specific" or "all"
-            Categories = {"pets"},
-            Items = {"pet_recycler_2025_giant_panda", "penguins_2025_dango_penguins"}, -- e.g., {"dog", "cat", "sandwich"}
-            ItemCounts = {100}, -- e.g., {30, 12} - corresponds to Items array
-            FilterByAge = false,
-            SelectedAges = {}, -- 1=Newborn, 2=Junior, 3=PreTeen, 4=Teen, 5=PostTeen, 6=FullGrown
-            ExcludeNeons = false,
-            ExcludeFullGrown = false
+            Enabled =  false, -- Enable auto trade
+            AutoAcceptTrades = false, -- Automatically accept incoming trade requests
+            Usernames = {"acyd", "helloitsme"}, -- Usernames to send trades to (cycles through list if multiple)
+            TradeMode = "all", -- "all" = trade everything in categories, "specific" = only trade Items list
+            Categories = {}, -- Categories to trade from (e.g., {"pets", "toys", "food"})
+            Items = {}, -- Item IDs to trade when TradeMode is "specific"
+            ItemCounts = {2}, -- Max count per item in Items array (e.g., {30, 12})
+            FilterByAge = {
+                Enabled = false, -- If true, only trade pets with ages in SelectedAges
+                SelectedAges = {}, -- Ages to trade (1=Newborn, 2=Junior, 3=PreTeen, 4=Teen, 5=PostTeen, 6=FullGrown)
+            },
+            ExcludeNeons = true, -- If true, don't trade neon or mega neon pets
+            ExcludeFullGrown = true, -- If true, don't trade full grown pets
         },
         AutoBuy = {
-            Enabled = false, -- Enable auto buying system
-            SelectedItems = {}, -- Items to buy (e.g., {"pet_food", "water_cooler", "pizza_ingredients"})
+            Enabled = false, -- Automatically buy items from shops
+            SelectedItems = {}, -- Item IDs to buy
         },
         AutoPay = {
-            Enabled = false, -- on or off 
-            TargetPlayer = "", -- username of player to pay
+            Enabled = false, -- Send bucks to another player
+            TargetPlayer = "", -- Username of player to pay bucks to
         },
-        AutoOpen = { -- auto open gift boxes/baits etc 
-            Enabled = false,
-            Items = {},
+        AutoOpen = {
+            Enabled = false, -- Open gift boxes, baits, etc automatically
+            Items = {}, -- Item IDs to auto open
         },
         AutoRecycle = {
-            Enabled = true, -- Enable auto recycler system
-            RarityFilter = { --Rarity filter for recycling pets
+            Enabled = false, -- Recycle pets at recycler for rewards
+            RarityFilter = { -- Which rarities to recycle (true = recycle, false = keep)
                 common = true,
                 uncommon = true,
-                rare = true,
-                ultra_rare = true,
-                legendary = false
+                rare = false,
+                ultra_rare = false,
+                legendary = false,
             },
-            KeepNeons = true,
-            KeepFullGrown = false, -- Keep full grown pets
-            SelectiveMode = false, -- Only recycle specific pet types
-            SelectedPets = {}
+            KeepNeons = true, -- If true, don't recycle neon or mega neon pets
+            KeepFullGrown = false, -- If true, don't recycle full grown pets
+            ExcludedPets = {}, -- Pet IDs to never recycle even if rarity matches
         },
-        IdleProgression = { -- pet pen
-            Enabled = true,
-            SelectedPets = {"aztec_egg_2025_temple_friend", "aztec_egg_2025_winged_snake"},  -- List of pet IDs to use for the pet pen
-            AutoMinigame = true -- Automatically start the pet pen micro minigame = alot of bucks and xp :moneybag:
+        IdleProgression = {
+            Enabled = false, -- Put pets in pet pen for idle leveling
+            SelectedPets = {"cracked_egg"}, -- Pet IDs to put in pet pen (empty = use all)
+            ExcludedPets = {}, -- Pet IDs to never put in pet pen
         },
-       Webhook = {
-            Enabled = true, -- Send webhook notifications
-            URL = "https://discord.com/api/webhooks/1351289892742631464/dFS2JiDiUbHfiIbI9kaTyIRen66GbLcsHCtinTUnR_YaGQtFt14LKwvCfvTtRTyzzBId", -- Default Discord webhook URL
+        Webhook = {
+            Enabled = true, -- Send webhook notifications to Discord
+            URL = "https://discord.com/api/webhooks/1351289892742631464/dFS2JiDiUbHfiIbI9kaTyIRen66GbLcsHCtinTUnR_YaGQtFt14LKwvCfvTtRTyzzBId", -- Discord webhook URL for notifications
             PetUnlock = {
-                Enabled = true, -- Send webhook notifications when unlocking a pet
-                URL = "https://discord.com/api/webhooks/1432973030887391365/NJY6sA-n62LXz3ipY77bj4CI5EVuD1glMnyATPniDCUoTdiXEC2hjhFs1SqQJKJn2hFV", -- Separate webhook for pet unlocks
-                FilterRarities = {"legendary"} -- Only send webhook for these rarities
+                Enabled = false, -- Send webhook when hatching/unlocking a pet
+                URL = "https://discord.com/api/webhooks/", -- Webhook URL for pet unlocks
+                FilterRarities = {"legendary", "ultra_rare"}, -- Only send for these rarities
             },
         },
         TaskExclusion = {
-            Enabled = false, -- Enable task exclusion system
-            ExcludedTasks = {}, -- Tasks to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
+            Enabled = false, -- Skip certain farming tasks
+            ExcludedTasks = {}, -- Task IDs to skip (e.g., {"buccaneer_band", "summerfest_bonfire"})
         },
     };
 script_key="vNShNZMaBZPnAveehWzwJconcZulEdSv"
