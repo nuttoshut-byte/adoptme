@@ -6,10 +6,10 @@
         BabyFarm = true, -- Does baby farm
         PetFarm = {
             Enabled = true, -- Enables the Pet Farm
-            FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
-            BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
-            EggType = "any", -- Which egg to equip ("any" = first available, or specific egg ID)
-            BuyEggType = "any", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
+            FarmEggs = true, -- If true, equips eggs to hatch them. If false, equips regular pets
+            BuyEggs = true, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
+            EggType = "aztec_egg_2025_aztec_egg", -- Which egg to equip ("any" = first available, or specific egg ID)
+            BuyEggType = "aztec_egg_2025_aztec_egg", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
             FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
             PrioritizeFriendship = true, -- If true, selects pets with higher friendship level first
@@ -64,12 +64,12 @@
             Items = {}, -- Item IDs to auto open
         },
         AutoRecycle = {
-            Enabled = false, -- Recycle pets at recycler for rewards
+            Enabled = true, -- Recycle pets at recycler for rewards
             RarityFilter = { -- Which rarities to recycle (true = recycle, false = keep)
                 common = true,
                 uncommon = true,
-                rare = false,
-                ultra_rare = false,
+                rare = true,
+                ultra_rare = true,
                 legendary = false,
             },
             KeepNeons = true, -- If true, don't recycle neon or mega neon pets
