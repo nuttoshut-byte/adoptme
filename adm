@@ -33,11 +33,11 @@
             ReduceGraphics = true, -- Reduce graphics quality to minimum
         },
         AutoPotion = {
-            Enabled = false, -- Use age potions on pets to level them up
-            SelectedPets = {}, -- Pet IDs to use potions on (empty = does fucking nothing mate)
+            Enabled = true, -- Use age potions on pets to level them up
+            SelectedPets = {"winter_2025_christmas_spirit"}, -- Pet IDs to use potions on (empty = does fucking nothing mate)
         },
         AutoTrade = {
-            Enabled =  true, -- Enable auto trade
+            Enabled =  false, -- Enable auto trade
             AutoAcceptTrades = false, -- Automatically accept incoming trade requests
             Usernames = {"adoptbro_3"}, -- Usernames to send trades to (cycles through list if multiple)
             TradeMode = "specific", -- "all" = trade everything in categories, "specific" = only trade Items list
@@ -64,7 +64,7 @@
             Items = {}, -- Item IDs to auto open
         },
         AutoRecycle = {
-            Enabled = true, -- Recycle pets at recycler for rewards
+            Enabled = false, -- Recycle pets at recycler for rewards
             RarityFilter = { -- Which rarities to recycle (true = recycle, false = keep)
                 common = true,
                 uncommon = true,
