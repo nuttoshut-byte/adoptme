@@ -37,12 +37,12 @@
             SelectedPets = {}, -- Pet IDs to use potions on (empty = does fucking nothing mate)
         },
         AutoTrade = {
-            Enabled =  false, -- Enable auto trade
+            Enabled =  true, -- Enable auto trade
             AutoAcceptTrades = false, -- Automatically accept incoming trade requests
-            Usernames = {"acyd", "helloitsme"}, -- Usernames to send trades to (cycles through list if multiple)
-            TradeMode = "all", -- "all" = trade everything in categories, "specific" = only trade Items list
-            Categories = {}, -- Categories to trade from (e.g., {"pets", "toys", "food"})
-            Items = {}, -- Item IDs to trade when TradeMode is "specific"
+            Usernames = {"adoptbro_3"}, -- Usernames to send trades to (cycles through list if multiple)
+            TradeMode = "specific", -- "all" = trade everything in categories, "specific" = only trade Items list
+            Categories = {"pets"}, -- Categories to trade from (e.g., {"pets", "toys", "food"})
+            Items = {"pet_recycler_2025_giant_panda", "penguins_2025_dango_penguins"}, -- Item IDs to trade when TradeMode is "specific"
             ItemCounts = {2}, -- Max count per item in Items array (e.g., {30, 12})
             FilterByAge = {
                 Enabled = false, -- If true, only trade pets with ages in SelectedAges
