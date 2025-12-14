@@ -37,19 +37,19 @@
             SelectedPets = {"winter_2025_christmas_spirit"}, -- Pet IDs to use potions on (empty = does fucking nothing mate)
         },
         AutoTrade = {
-            Enabled =  false, -- Enable auto trade
+            Enabled =  true, -- Enable auto trade
             AutoAcceptTrades = false, -- Automatically accept incoming trade requests
             Usernames = {"adoptbro_3"}, -- Usernames to send trades to (cycles through list if multiple)
             TradeMode = "specific", -- "all" = trade everything in categories, "specific" = only trade Items list
             Categories = {"pets"}, -- Categories to trade from (e.g., {"pets", "toys", "food"})
-            Items = {"pet_recycler_2025_giant_panda", "penguins_2025_dango_penguins"}, -- Item IDs to trade when TradeMode is "specific"
-            ItemCounts = {2}, -- Max count per item in Items array (e.g., {30, 12})
+            Items = {"winter_2025_christmas_spirit", "penguins_2025_dango_penguins"}, -- Item IDs to trade when TradeMode is "specific"
+            ItemCounts = {20}, -- Max count per item in Items array (e.g., {30, 12})
             FilterByAge = {
-                Enabled = false, -- If true, only trade pets with ages in SelectedAges
-                SelectedAges = {}, -- Ages to trade (1=Newborn, 2=Junior, 3=PreTeen, 4=Teen, 5=PostTeen, 6=FullGrown)
+                Enabled = true, -- If true, only trade pets with ages in SelectedAges
+                SelectedAges = {6}, -- Ages to trade (1=Newborn, 2=Junior, 3=PreTeen, 4=Teen, 5=PostTeen, 6=FullGrown)
             },
-            ExcludeNeons = true, -- If true, don't trade neon or mega neon pets
-            ExcludeFullGrown = true, -- If true, don't trade full grown pets
+            ExcludeNeons = false, -- If true, don't trade neon or mega neon pets
+            ExcludeFullGrown = false, -- If true, don't trade full grown pets
         },
         AutoBuy = {
             Enabled = true, -- Automatically buy items from shops
