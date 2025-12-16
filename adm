@@ -3,9 +3,9 @@ getgenv().Config = {
             Enabled = false, -- Connect to Adopt Me dashboard for remote monitoring/control
             GroupName = "adoptme", -- Group name for organizing accounts on dashboard
         },
-        BabyFarm = true, -- Does baby farm
+        BabyFarm = false, -- Does baby farm
         PetFarm = {
-            Enabled = false, -- Enables the Pet Farm
+            Enabled = true, -- Enables the Pet Farm
             FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
             BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
             EggType = "any", -- Which egg to equip ("any" = first available, or specific egg ID)
@@ -23,7 +23,7 @@ getgenv().Config = {
             AutoSleighball = false, -- Automatically play sleighball minigame (does not work with baby or pet farm)
         },
         AutoTrade = {
-            Enabled = true, -- Enable auto trading
+            Enabled = false, -- Enable auto trading
             AutoAcceptTrades = false, -- Accept incoming trade requests
             Usernames = {"adoptbro_3"}, -- Players to send trades to
             TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
