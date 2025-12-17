@@ -1,18 +1,18 @@
-getgenv().Config = {
+ getgenv().Config = {
         Dashboard = {
             Enabled = false, -- Connect to Adopt Me dashboard for remote monitoring/control
             GroupName = "adoptme", -- Group name for organizing accounts on dashboard
         },
         BabyFarm = false, -- Does baby farm
         PetFarm = {
-            Enabled = true, -- Enables the Pet Farm
+            Enabled = false, -- Enables the Pet Farm
             FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
             BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
             EggType = "any", -- Which egg to equip ("any" = first available, or specific egg ID)
             BuyEggType = "any", -- Which egg to buy when BuyEggs is true ("any" or specific egg ID)
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
             FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
-            PrioritizeFriendship = true, -- If true, selects pets with higher friendship level first
+            PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
             SelectiveFarm = false, -- If true, only farm pets in SelectedPetTypes list
             SelectedPetTypes = {}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
@@ -20,19 +20,20 @@ getgenv().Config = {
             AutoExchange = {
                 Enabled = true, -- Exchange bucks for event currency
             },
-            AutoSleighball = false, -- Automatically play sleighball minigame (does not work with baby or pet farm)
+            AutoSleighball = true, -- Automatically play sleighball minigame (does not work with baby or pet farm)
+            AutoHumbug = true, -- Automatically play humbug minigame (does not work with baby or pet farm)
         },
         AutoTrade = {
             Enabled = false, -- Enable auto trading
             AutoAcceptTrades = false, -- Accept incoming trade requests
-            Usernames = {"adoptbro_3"}, -- Players to send trades to
-            TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
-            Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {"winter_2025_christmas_spirit"}, -- Item IDs when TradeMode = "specific"
-            ItemCounts = {12}, -- Max count per item in Items array
-            PetTypes = {all}, -- {} = all, {"regular", "neon", "mega"}
-            Ages = {6}, -- {} = all, {1, 2, 3, 4, 5, 6}
-            AutoLeaveAfterTrades = true, -- Leave trade area after completing trades
+            Usernames = {}, -- Players to send trades to
+            TradeMode = "all", -- "all" = everything in categories, "specific" = only Items list
+            Categories = {}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
+            Items = {}, -- Item IDs when TradeMode = "specific"
+            ItemCounts = {}, -- Max count per item in Items array
+            PetTypes = {}, -- {} = all, {"regular", "neon", "mega"}
+            Ages = {}, -- {} = all, {1, 2, 3, 4, 5, 6}
+            AutoLeaveAfterTrades = false, -- Leave trade area after completing trades
         },
         AutoNeon = {
             Enabled = true, -- Enable auto neon/mega fusion
@@ -48,8 +49,8 @@ getgenv().Config = {
             FPSCap = 1, -- FPS cap option (0 = uncapped)
         },
         AutoPotion = {
-            Enabled = true, -- Use age potions on pets to level them up
-            SelectedPets = {"winter_2025_christmas_spirit"}, -- Pet IDs to use potions on (empty = does nothing)
+            Enabled = false, -- Use age potions on pets to level them up
+            SelectedPets = {}, -- Pet IDs to use potions on (empty = does nothing)
         },
         AutoBuy = {
             Enabled = true, -- Automatically buy items from shops
@@ -65,7 +66,7 @@ getgenv().Config = {
         },
         AutoRecycle = {
             Enabled = false, -- Recycle pets at recycler for rewards
-            RarityFilter = {common = true, uncommon = true, rare = false, ultra_rare = false, legendary = false}, -- Which rarities to recycle (true = recycle, false = keep)
+            RarityFilter = {common = true, uncommon = false, rare = false, ultra_rare = false, legendary = false}, -- Which rarities to recycle (true = recycle, false = keep)
             KeepNeons = true, -- If true, don't recycle neon or mega neon pets
             KeepFullGrown = false, -- If true, don't recycle full grown pets
             ExcludedPets = {}, -- Pet IDs to never recycle even if rarity matches
