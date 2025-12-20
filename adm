@@ -5,7 +5,7 @@
         },
         BabyFarm = false, -- Does baby farm
         PetFarm = {
-            Enabled = true, -- Enables the Pet Farm
+            Enabled = false, -- Enables the Pet Farm
             FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
             BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
             EggType = "any", -- Which egg to equip ("any" = first available, or specific egg ID)
@@ -24,16 +24,16 @@
             AutoHumbug = false, -- Automatically play humbug minigame (does not work with baby or pet farm)
         },
         AutoTrade = {
-            Enabled = false, -- Enable auto trading
-            AutoAcceptTrades = false, -- Accept incoming trade requests
+            Enabled = true, -- Enable auto trading
+            AutoAcceptTrades = true, -- Accept incoming trade requests
             Usernames = {"adoptbro_3"}, -- Players to send trades to
             TradeMode = "specific", -- "all" = everything in categories, "specific" = only Items list
             Categories = {"pets"}, -- {"pets", "toys", "food", "transport", "gifts", "stickers", "pet_accessories", "roleplay"}
-            Items = {"pet_recycler_2025_giant_panda", "penguins_2025_dango_penguins"}, -- Item IDs when TradeMode = "specific"
+            Items = {"pet_recycler_2025_giant_panda", "winter_2025_christmas_spirit"}, -- Item IDs when TradeMode = "specific"
             ItemCounts = {10}, -- Max count per item in Items array
             PetTypes = {all}, -- {} = all, {"regular", "neon", "mega"}
-            Ages = {all}, -- {} = all, {1, 2, 3, 4, 5, 6}
-            AutoLeaveAfterTrades = false, -- Leave trade area after completing trades
+            Ages = {6}, -- {} = all, {1, 2, 3, 4, 5, 6}
+            AutoLeaveAfterTrades = true, -- Leave trade area after completing trades
         },
         AutoNeon = {
             Enabled = true, -- Enable auto neon/mega fusion
@@ -46,14 +46,14 @@
             AutoShowUI = false, -- Load the UI on script start (main overlay disable for less memory usage)
             ShowOverlay = true, -- Show stats overlay (disables 3D rendering)
             ReduceGraphics = true, -- Reduce graphics quality to minimum
-            FPSCap = 1, -- FPS cap option (0 = uncapped)
+            FPSCap = 0, -- FPS cap option (0 = uncapped)
         },
         AutoPotion = {
-            Enabled = false, -- Use age potions on pets to level them up
-            SelectedPets = {}, -- Pet IDs to use potions on (empty = does nothing)
+            Enabled = true, -- Use age potions on pets to level them up
+            SelectedPets = {"winter_2025_christmas_spirit"}, -- Pet IDs to use potions on (empty = does nothing)
         },
         AutoBuy = {
-            Enabled = true, -- Automatically buy items from shops
+            Enabled = false, -- Automatically buy items from shops
             SelectedItems = {"winter_2025_christmas_spirit"}, -- Item IDs to buy
         },
         AutoPay = {
