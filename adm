@@ -65,7 +65,7 @@
             Items = {}, -- Item IDs to auto open
         },
         AutoRecycle = {
-            Enabled = true, -- Recycle pets at recycler for rewards
+            Enabled = false, -- Recycle pets at recycler for rewards
             RarityFilter = {common = false, uncommon = false, rare = false, ultra_rare = false, legendary = true}, -- Which rarities to recycle (true = recycle, false = keep)
             KeepNeons = true, -- If true, don't recycle neon or mega neon pets
             KeepFullGrown = false, -- If true, don't recycle full grown pets
