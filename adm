@@ -1,11 +1,11 @@
 getgenv().Config = {
         Dashboard = {
-            Enabled = false, -- Connect to Adopt Me dashboard for remote monitoring/control
+            Enabled = true, -- Connect to Adopt Me dashboard for remote monitoring/control
             GroupName = "adoptme", -- Group name for organizing accounts on dashboard
         },
         BabyFarm = false, -- Does baby farm
         PetFarm = {
-            Enabled = true, -- Enables the Pet Farm
+            Enabled = false, -- Enables the Pet Farm
             FarmEggs = false, -- If true, equips eggs to hatch them. If false, equips regular pets
             BuyEggs = false, -- If FarmEggs is true and no eggs in inventory, buy eggs automatically
             EggType = "any", -- Which egg to equip ("any" = first available, or specific egg ID)
@@ -13,7 +13,7 @@ getgenv().Config = {
             MaxPets = 1, -- How many pets to equip at once (1 = free, 2 = requires Robux gamepass)
             FarmUntilFullGrown = false, -- If true, selects pets that aren't full grown first
             PrioritizeFriendship = false, -- If true, selects pets with higher friendship level first
-            SelectiveFarm = true, -- If true, only farm pets in SelectedPetTypes list
+            SelectiveFarm = false, -- If true, only farm pets in SelectedPetTypes list
             SelectedPetTypes = {"winter_2025_christmas_spirit"}, -- Pet IDs to farm when SelectiveFarm is true (e.g., {"dog", "cat"})
         },
         EventFarm = {
@@ -50,11 +50,11 @@ getgenv().Config = {
             FPSCap = 2, -- FPS cap option (0 = uncapped)
         },
         AutoPotion = {
-            Enabled = true, -- Use age potions on pets to level them up
+            Enabled = false, -- Use age potions on pets to level them up
             SelectedPets = {"winter_2025_christmas_spirit"}, -- Pet IDs to use potions on (empty = does nothing)
         },
         AutoBuy = {
-            Enabled = true, -- Automatically buy items from shops
+            Enabled = false, -- Automatically buy items from shops
             SelectedItems = {"winter_2025_christmas_spirit"}, -- Item IDs to buy
         },
         AutoPay = {
