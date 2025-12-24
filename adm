@@ -66,11 +66,11 @@ getgenv().Config = {
             Items = {}, -- Item IDs to auto open
         },
         AutoRecycle = {
-            Enabled = false, -- Recycle pets at recycler for rewards
-            RarityFilter = {common = true, uncommon = true, rare = false, ultra_rare = false, legendary = false}, -- Which rarities to recycle (true = recycle, false = keep)
+            Enabled = true, -- Recycle pets at recycler for rewards
+            RarityFilter = {common = true, uncommon = true, rare = false, ultra_rare = false, legendary = true}, -- Which rarities to recycle (true = recycle, false = keep)
             KeepNeons = true, -- If true, don't recycle neon or mega neon pets
             KeepFullGrown = false, -- If true, don't recycle full grown pets
-            ExcludedPets = {}, -- Pet IDs to never recycle even if rarity matches
+            ExcludedPets = {"penguins_2025_dango_penguins"}, -- Pet IDs to never recycle even if rarity matches
         },
         IdleProgression = {
             Enabled = false, -- Put pets in pet pen for idle leveling
