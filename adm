@@ -1,4 +1,4 @@
-Wait(70)
+Wait(60)
 getgenv().RollbackConfig = {
     AutoRollback = true, -- true or false
     SelectedEgg = "pet_recycler_2025_crystal_egg", -- e.g., "cracked_egg", "aussie_egg" (use the egg id here)
@@ -6,5 +6,5 @@ getgenv().RollbackConfig = {
     WebhookURL = "https://discord.com/api/webhooks/1371491842234912839/jk9zLgJ7-WtuJ2qDIKVKDtuNJimYP-1iO-q2qPyN2Fz5dtc0DCZFCF9fYjtWFiRxJPx7", -- your webhook URL here
     CurrentEggUnique = nil, -- just leave this here please
 };
-script_key="QGrDoPzYjekMNSrIWfhYyYcLXQWbtwIU";
+script_key="eyEyrnsoLPNTELHVnOXXEabvRYnGvqoD";
 loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/bbe161c10602064379ebcd1cb13204c9.lua"))()
